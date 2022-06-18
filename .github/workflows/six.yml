@@ -8,9 +8,7 @@ on:
 jobs:
   install:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.14.1-chrome85-ff81
-      options: --user 1001
+    container: cypress/browsers:node12.14.1-chrome85-ff81
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -61,9 +59,7 @@ jobs:
   ui-chrome-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.14.1-chrome85-ff81
-      options: --user 1001
+    container: cypress/browsers:node12.14.1-chrome85-ff81
     needs: install
     strategy:
       # when one test fails, DO NOT cancel the other
