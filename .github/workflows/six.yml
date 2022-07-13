@@ -9,10 +9,10 @@ jobs:
     container: cypress/browsers:node12.14.1-chrome85-ff81
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Cypress install
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           runTests: false
       # report machine parameters
@@ -34,10 +34,10 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Cypress install
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           runTests: false
       # report machine parameters
@@ -70,7 +70,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -88,7 +88,7 @@ jobs:
         run: ls /__e
 
       - name: "UI Tests - Chrome"
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           start: yarn start:ci
           wait-on: "http://localhost:3000"
@@ -96,7 +96,7 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: v6
+          tag: v6,optimized
           group: "UI - Chrome"
           spec: cypress/tests/ui/*
           config-file: cypress.json
@@ -126,7 +126,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -135,7 +135,7 @@ jobs:
           path: build
 
       - name: "UI Tests - Chrome - Mobile"
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           config: "viewportWidth=375,viewportHeight=667"
           start: yarn start:ci
@@ -144,7 +144,7 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: v6
+          tag: v6,optimized
           group: "UI - Chrome - Mobile"
           spec: cypress/tests/ui/*
           config-file: cypress.json
@@ -173,7 +173,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -182,7 +182,7 @@ jobs:
           path: build
 
       - name: "UI Tests - Firefox"
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           start: yarn start:ci
           wait-on: "http://localhost:3000"
@@ -190,7 +190,7 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: v6
+          tag: v6,optimized
           group: "UI - Firefox"
           spec: cypress/tests/ui/*
           config-file: cypress.json
@@ -219,7 +219,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -228,7 +228,7 @@ jobs:
           path: build
 
       - name: "UI Tests - Firefox - Mobile"
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           config: "viewportWidth=375,viewportHeight=667"
           start: yarn start:ci
@@ -237,7 +237,7 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: v6
+          tag: v6,optimized
           group: "UI - Firefox - Mobile"
           spec: cypress/tests/ui/*
           config-file: cypress.json
@@ -263,7 +263,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -272,14 +272,14 @@ jobs:
           path: build
 
       - name: "UI Tests - Electron - Windows"
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           record: true
           parallel: true
-          tag: v6
+          tag: v6,optimized
           group: "UI - Electron - Windows"
           spec: cypress/tests/ui/*
           config-file: cypress.json
