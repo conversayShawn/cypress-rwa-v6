@@ -9,7 +9,7 @@ jobs:
     container: cypress/browsers:node12.14.1-chrome85-ff81
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache
@@ -21,7 +21,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: Cypress install
         uses: cypress-io/github-action@v2
         with:
@@ -37,7 +36,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache-win
@@ -49,7 +48,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: Cypress install
         uses: cypress-io/github-action@v2
         with:
@@ -72,7 +70,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache
@@ -84,7 +82,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Chrome"
         uses: cypress-io/github-action@v2
         with:
@@ -96,7 +93,7 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: v6, 7copy
+          tag: option2,6
           group: "UI - Chrome"
           spec: cypress/tests/ui/*
         env:
@@ -122,7 +119,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache
@@ -134,7 +131,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Chrome - Mobile"
         uses: cypress-io/github-action@v2
         with:
@@ -147,7 +143,7 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: v6, 7copy
+          tag: option2,6
           group: "UI - Chrome - Mobile"
           spec: cypress/tests/ui/*
         env:
@@ -175,7 +171,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache
@@ -187,7 +183,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v2
         with:
@@ -199,7 +194,7 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: v6, 7copy
+          tag: option2,6
           group: "UI - Firefox"
           spec: cypress/tests/ui/*
         env:
@@ -227,7 +222,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache
@@ -239,7 +234,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Firefox - Mobile"
         uses: cypress-io/github-action@v2
         with:
@@ -252,7 +246,7 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: v6, 7copy
+          tag: option2,6
           group: "UI - Firefox - Mobile"
           spec: cypress/tests/ui/*
         env:
@@ -277,7 +271,7 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v2
         id: yarn-and-build-cache-win
@@ -289,7 +283,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Electron - Windows"
         uses: cypress-io/github-action@v2
         with:
@@ -300,7 +293,7 @@ jobs:
           wait-on-timeout: 120
           record: true
           parallel: true
-          tag: v6, 7copy
+          tag: option2,6
           group: "UI - Electron - Windows"
           spec: cypress/tests/ui/*
         env:
