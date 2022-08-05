@@ -96,10 +96,10 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: option1,6
+          tag: option1,10
           group: "UI - Chrome"
           spec: cypress/tests/ui/*
-          config-file: cypress.json
+          config-file: cypress.config.ts
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -144,10 +144,10 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-          tag: option1,6
+          tag: option1,10
           group: "UI - Chrome - Mobile"
           spec: cypress/tests/ui/*
-          config-file: cypress.json
+          config-file: cypress.config.ts
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -190,10 +190,10 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: option1,6
+          tag: option1,10
           group: "UI - Firefox"
           spec: cypress/tests/ui/*
-          config-file: cypress.json
+          config-file: cypress.config.ts
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -237,10 +237,10 @@ jobs:
           browser: firefox
           record: true
           parallel: true
-          tag: option1,6
+          tag: option1,10
           group: "UI - Firefox - Mobile"
           spec: cypress/tests/ui/*
-          config-file: cypress.json
+          config-file: cypress.config.ts
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -279,10 +279,10 @@ jobs:
           wait-on-timeout: 120
           record: true
           parallel: true
-          tag: option1,6
+          tag: option1,10
           group: "UI - Electron - Windows"
           spec: cypress/tests/ui/*
-          config-file: cypress.json
+          config-file: cypress.config.ts
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
